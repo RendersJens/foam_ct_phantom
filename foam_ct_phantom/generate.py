@@ -104,7 +104,7 @@ def genvol(outfile, phantom, geom, zoomfactor=1):
         spheres = phantom
     mi = np.argmin([nx,ny,nz])
     vol = np.zeros((nz, ny, nx), dtype=np.float32)
-    for i in tqdm.trange(nz):
+    for i in range(nz):
         ccode.genvol(spheres, vol, nx, ny, nz, voxsize, i, cx=geom.cx*zoomfactor, cy=geom.cy*zoomfactor, cz=geom.cz*zoomfactor, supersampling=supersampling)
 
     with h5py.File(outfile, 'w') as f:
