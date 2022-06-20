@@ -185,9 +185,9 @@ DECLDIR void genvol(const float * const spheres, const unsigned int nspheres, fl
                     const long double x = c[0] + (ix+0.5)*voxsize - n[0]*voxsize/2 + sx*voxsize/supersampling - voxsize/2 + voxsize/(2*supersampling);
                     for(unsigned int sy=0; sy<supersampling; sy++){
                         const long double y = c[1] + (iy+0.5)*voxsize - n[1]*voxsize/2 + sy*voxsize/supersampling - voxsize/2 + voxsize/(2*supersampling);
-                        if(sqrtl(x*x+y*y)>1){
-                            continue;
-                        }                    
+                        // if(sqrtl(x*x+y*y)>1){
+                        //     continue;
+                        // }                    
                         unsigned char found=0;
                         long double s2,dx,dy,dz;
                         for(unsigned int q=0; q<ntocheck; q++){
